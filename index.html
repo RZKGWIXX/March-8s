@@ -56,15 +56,15 @@
       return flower;
     }
     
-    // Генеруємо квіти при завантаженні сторінки
+    // Генеруємо квіти при завантаженні сторінки (збільшено до 20 квітів)
     window.addEventListener("load", function() {
       const bg = document.getElementById("background");
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 20; i++) {  // Тепер створюється 20 квітів замість 7
         bg.appendChild(createFlower());
       }
     });
     
-    // При натисканні кнопки спавняться 10 сердечок із випадковими позиціями
+    // При натисканні кнопки спавняються 10 сердечок із випадковими позиціями
     document.getElementById("heartButton").addEventListener("click", function() {
       for (let i = 0; i < 10; i++) {
         const heart = document.createElement("div");

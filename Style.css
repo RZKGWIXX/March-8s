@@ -7,7 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #efaab4, #f0b6bf);
+  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -82,7 +82,7 @@ button:hover {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: rgb(237, 142, 158);
+  background: rgb(255, 144, 162);
   border-radius: 50%;
   transform: scale(0);
   animation: petalGrow 1.5s forwards;
