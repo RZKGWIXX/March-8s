@@ -1,0 +1,184 @@
+/* Загальні стилі сторінки */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Контейнер для квітів (фон) */
+  #background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Контейнер для основного контенту */
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: #DB7093;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #FF1493;
+  }
+  
+  /* Стилі для простенької квітки */
+  .flower {
+    position: absolute;
+    width: 40px;
+    height: 60px; /* 40px для квітки + 20px для стебла */
+    transform: scale(0);
+    animation: growFlower 2s forwards;
+  }
+  
+  @keyframes growFlower {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+  }
+  
+  /* Контейнер пелюсток */
+  .petals {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Пелюстки */
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(237, 142, 158);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: petalGrow 1.5s forwards;
+  }
+  
+  @keyframes petalGrow {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Розташування пелюсток */
+  .petal1 { top: 0; left: 10px; }
+  .petal2 { top: 10px; right: 0; }
+  .petal3 { bottom: 0; left: 10px; }
+  .petal4 { top: 10px; left: 0; }
+  
+  /* Центр квітки */
+  .center {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: centerGrow 1.5s forwards;
+  }
+  
+  @keyframes centerGrow {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Стебло квітки */
+  .stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    height: 0;
+    background: green;
+    transform: translateX(-50%);
+    animation: stemGrow 2s forwards;
+  }
+  
+  @keyframes stemGrow {
+    from { height: 0; }
+    to { height: 20px; }
+  }
+  
+  /* Контейнер для сердечок */
+  #heartContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+  
+  /* Стилізація сердечка */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: float 3s linear forwards;
+  }
+  
+  /* Формування форми сердечка через псевдоелементи */
+  .heart:before,
+  .heart:after {
+    content: "";
+    position: absolute;
+    background: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  .heart:before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 10px;
+    top: 0;
+  }
+  
+  /* Анімація для сердечок: підйом, обертання, збільшення та зникнення */
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
